@@ -1,95 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dheeraj B | QA Automation Engineer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f9;
-            color: #333;
-        }
-        header {
-            background-color: #1f2937;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h1, h2 {
-            margin-bottom: 10px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-        footer {
-            background: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dheeraj B - QA Automation Engineer portfolio" />
+  <title>Dheeraj B | QA Automation Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Fixed navigation bar -->
+  <header class="site-header">
+    <nav class="main-nav">
+      <a class="brand" href="#hero">Dheeraj B</a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-    <h1>Dheeraj B</h1>
-    <p>QA Automation Engineer | SDET | CI/CD | Hybrid Framework Architect</p>
-</header>
-
-<section>
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            QA / SDET with 4+ years of experience in UI, API, and CI/CD automation.
-            Specialized in building hybrid frameworks using Java, Selenium, REST Assured,
-            and deploying scalable pipelines via Jenkins (AWS EC2) and GitHub Actions.
+  <main>
+    <!-- Hero section -->
+    <section id="hero" class="section hero-section">
+      <div class="container hero-content">
+        <p class="eyebrow">Professional Portfolio</p>
+        <h1>Dheeraj B</h1>
+        <p class="hero-tagline">QA Automation Engineer | SDET | UI + API + CI/CD Automation</p>
+        <p class="hero-summary">
+          Quality-focused automation engineer with experience designing scalable test frameworks,
+          implementing CI/CD quality gates, and enabling reliable releases across web and API platforms.
         </p>
-    </div>
+      </div>
+    </section>
 
-    <h2>Featured Project</h2>
-    <div class="card">
-        <h3>Hybrid E2E QA Automation Framework</h3>
-        <p>
-            Built a production-grade hybrid automation framework (UI + API + DB)
-            with parallel execution, CI/CD integration, advanced reporting,
-            and regression reduction of ~90%.
-        </p>
-        <p>
-            🔗 <a href="https://github.com/dheeraj1b1/e2e-qa-automation-framework" target="_blank">
-            View on GitHub</a>
-        </p>
-    </div>
+    <!-- Skills section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <article class="skill-badge">
+            <span class="skill-icon" aria-hidden="true">🧪</span>
+            <div>
+              <h3>Test Automation</h3>
+              <p>Selenium, Playwright, TestNG</p>
+            </div>
+          </article>
+          <article class="skill-badge">
+            <span class="skill-icon" aria-hidden="true">🔌</span>
+            <div>
+              <h3>API Testing</h3>
+              <p>REST Assured, Postman, Contract Validation</p>
+            </div>
+          </article>
+          <article class="skill-badge">
+            <span class="skill-icon" aria-hidden="true">⚙️</span>
+            <div>
+              <h3>CI/CD</h3>
+              <p>Jenkins, GitHub Actions, Docker</p>
+            </div>
+          </article>
+          <article class="skill-badge">
+            <span class="skill-icon" aria-hidden="true">💾</span>
+            <div>
+              <h3>Data &amp; Backend</h3>
+              <p>SQL, MySQL, Test Data Management</p>
+            </div>
+          </article>
+          <article class="skill-badge">
+            <span class="skill-icon" aria-hidden="true">☁️</span>
+            <div>
+              <h3>Cloud &amp; Infra</h3>
+              <p>AWS EC2, Linux, Pipeline Monitoring</p>
+            </div>
+          </article>
+          <article class="skill-badge">
+            <span class="skill-icon" aria-hidden="true">📈</span>
+            <div>
+              <h3>Reporting</h3>
+              <p>Allure Reports, Logs, Defect Metrics</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <h2>Tech Stack</h2>
-    <div class="card">
-        Java | Selenium | REST Assured | TestNG | Gradle | Jenkins | GitHub Actions | AWS EC2 | Docker | MySQL
-    </div>
+    <!-- Projects section -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Hybrid Automation Framework</h3>
+            <p>
+              End-to-end UI + API hybrid framework with parallel runs, reusable utilities,
+              and CI-integrated reporting for faster regression cycles.
+            </p>
+            <ul class="tech-tags">
+              <li>Java</li>
+              <li>Selenium</li>
+              <li>REST Assured</li>
+              <li>Jenkins</li>
+            </ul>
+            <a href="https://github.com/dheeraj1b1/e2e-qa-automation-framework" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </article>
 
-    <h2>Contact</h2>
-    <div class="card">
-        📧 dheeraj474@gmail.com <br>
-        🔗 <a href="https://linkedin.com/in/dheerajbme" target="_blank">LinkedIn</a> <br>
-        🔗 <a href="https://github.com/dheeraj1b1" target="_blank">GitHub</a>
-    </div>
-</section>
+          <article class="project-card">
+            <h3>Job Curator App</h3>
+            <p>
+              Automation-backed job aggregation app validating search filters,
+              feed freshness, and user flows through scheduled quality checks.
+            </p>
+            <ul class="tech-tags">
+              <li>Python</li>
+              <li>API Tests</li>
+              <li>GitHub Actions</li>
+            </ul>
+            <a href="https://github.com/dheeraj1b1" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </article>
 
-<footer>
-    © 2026 Dheeraj B | QA Automation Portfolio
-</footer>
+          <article class="project-card">
+            <h3>UI Regression Dashboard</h3>
+            <p>
+              UI test suite and dashboard for validating critical user journeys,
+              capturing flaky trends, and publishing release readiness status.
+            </p>
+            <ul class="tech-tags">
+              <li>Playwright</li>
+              <li>TypeScript</li>
+              <li>Allure</li>
+            </ul>
+            <a href="https://github.com/dheeraj1b1" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </article>
 
+          <article class="project-card">
+            <h3>API Test Suite</h3>
+            <p>
+              Contract and integration test suite for microservices APIs with schema checks,
+              authentication coverage, and pipeline quality gates.
+            </p>
+            <ul class="tech-tags">
+              <li>REST Assured</li>
+              <li>Postman</li>
+              <li>Docker</li>
+            </ul>
+            <a href="https://github.com/dheeraj1b1" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <article class="experience-card">
+          <div class="experience-header">
+            <h3>Senior QA Automation Engineer - Client Project (E-commerce Platform)</h3>
+            <span>2023 - Present</span>
+          </div>
+          <ul>
+            <li>Designed and maintained a scalable automation framework for UI and API layers.</li>
+            <li>Reduced regression execution time by introducing parallelization and test tagging strategy.</li>
+            <li>Integrated quality gates into Jenkins and GitHub Actions for continuous release validation.</li>
+            <li>Collaborated with developers and product teams to triage defects and improve testability.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-card">
+          <p><strong>Email:</strong> <a href="mailto:dheeraj474@gmail.com">dheeraj474@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dheerajbme" target="_blank" rel="noreferrer">linkedin.com/in/dheerajbme</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/dheeraj1b1" target="_blank" rel="noreferrer">github.com/dheeraj1b1</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
