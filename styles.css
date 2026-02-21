@@ -246,7 +246,87 @@ a:hover {
 }
 
 /* ----------------------------------
-   Skills Section Responsive Grid
+   Skills Section
+----------------------------------- */
+#skills {
+  padding-top: 4.5rem;
+}
+
+#skills h2 {
+  margin-bottom: 1rem;
+}
+
+.key-skills-inline {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.key-skills-inline strong {
+  font-weight: 700;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 2px solid #3b82f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(18, 32, 56, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(18, 32, 56, 0.06);
+}
+
+.skill-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 1.1rem;
+  color: var(--text-main);
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.4;
+}
+
+.skill-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* ----------------------------------
+   Skills Section Responsive Updates
 ----------------------------------- */
 @media (max-width: 900px) {
   .skills-grid {
@@ -258,8 +338,8 @@ a:hover {
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  .key-skills-container {
-    margin-bottom: 2.5rem;
+  .key-skills-inline {
+    margin-bottom: 2rem;
   }
 }
 
