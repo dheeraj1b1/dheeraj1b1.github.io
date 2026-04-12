@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dheeraj B — SDET & QA Automation Engineer. Java, Selenium, REST Assured, CI/CD, API Testing." />
+  <meta name="description"
+    content="Dheeraj B — SDET & QA Automation Engineer. Java, Selenium, REST Assured, CI/CD, API Testing." />
   <title>Dheeraj B | SDET & QA Automation Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --bg: #f4f6fa;
@@ -21,15 +25,22 @@
       --green: #0e7a4f;
       --green-bg: #e6f7ef;
       --border: #dce3ef;
-      --shadow: 0 2px 16px rgba(20,36,70,0.07);
+      --shadow: 0 2px 16px rgba(20, 36, 70, 0.07);
       --radius: 14px;
       --max-width: 1060px;
       --font: 'DM Sans', sans-serif;
       --mono: 'DM Mono', monospace;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--font);
@@ -39,8 +50,14 @@
       font-size: 15px;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .container {
       width: min(100% - 2.4rem, var(--max-width));
@@ -49,163 +66,401 @@
 
     /* ── Nav ── */
     .site-header {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(255,255,255,0.92);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
+
     .main-nav {
       width: min(100% - 2.4rem, var(--max-width));
       margin: 0 auto;
       padding: 0.85rem 0;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .brand { font-weight: 700; font-size: 1rem; color: var(--text-main); letter-spacing: -0.2px; }
-    .nav-links { list-style: none; display: flex; gap: 1.4rem; }
-    .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.9rem; }
-    .nav-links a:hover { color: var(--text-main); text-decoration: none; }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-main);
+      letter-spacing: -0.2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.4rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      text-decoration: none;
+    }
 
     /* ── Sections ── */
-    .section { padding: 5.5rem 0 4rem; border-bottom: 1px solid var(--border); }
-    .section-alt { background: var(--surface-alt); }
-    .section h2 { font-size: 1.55rem; font-weight: 700; margin-bottom: 1.6rem; letter-spacing: -0.3px; }
+    .section {
+      padding: 2.5rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-alt {
+      background: var(--surface-alt);
+    }
+
+    .section h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 1.6rem;
+      letter-spacing: -0.3px;
+    }
 
     /* ── Hero ── */
     .hero-section {
-      padding-top: 8rem;
+      padding-top: 5rem;
+      padding-bottom: 2rem;
       background: linear-gradient(155deg, #ffffff 60%, #edf2ff 100%);
     }
-    .hero-content { max-width: 780px; }
+
     .eyebrow {
       display: inline-block;
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.4px;
-      color: var(--accent); background: var(--accent-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: var(--accent);
+      background: var(--accent-light);
       border: 1px solid var(--accent-border);
-      border-radius: 999px; padding: 0.22rem 0.75rem; margin-bottom: 1rem;
+      border-radius: 999px;
+      padding: 0.22rem 0.75rem;
+      margin-bottom: 1rem;
     }
+
     .hero-content h1 {
       font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700; letter-spacing: -0.6px;
-      margin-bottom: 0.5rem; line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      margin-bottom: 0.5rem;
+      line-height: 1.15;
     }
+
     .hero-tagline {
-      font-size: 1.05rem; font-weight: 600; color: var(--text-muted);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
       margin-bottom: 1.1rem;
     }
-    .hero-summary { color: #3d4a5e; max-width: 700px; margin-bottom: 1.5rem; }
 
-    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .hero-summary {
+      color: #3d4a5e;
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
     .badge {
-      font-size: 0.78rem; font-weight: 600;
-      border-radius: 999px; padding: 0.25rem 0.7rem;
-      background: var(--accent-light); color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      background: var(--accent-light);
+      color: var(--accent);
       border: 1px solid var(--accent-border);
     }
-    .badge.green { background: var(--green-bg); color: var(--green); border-color: #9be3c3; }
+
+    .badge.green {
+      background: var(--green-bg);
+      color: var(--green);
+      border-color: #9be3c3;
+    }
 
     /* ── Skills ── */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
+      align-items: stretch;
     }
+
     .skill-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.2rem;
       box-shadow: var(--shadow);
     }
-    .skill-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--text-main); }
-    .tag-list { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .skill-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
     .tag {
-      background: #edf2ff; color: #263f80;
-      border: 1px solid #c9d8f7; border-radius: 999px;
-      padding: 0.12rem 0.52rem; font-size: 0.76rem; font-weight: 600;
+      background: #edf2ff;
+      color: #263f80;
+      border: 1px solid #c9d8f7;
+      border-radius: 999px;
+      padding: 0.12rem 0.52rem;
+      font-size: 0.76rem;
+      font-weight: 600;
       font-family: var(--mono);
     }
-    .tag.ai { background: #f0ebff; color: #5b21b6; border-color: #d4c5f9; }
+
+    .tag.ai {
+      background: #f0ebff;
+      color: #5b21b6;
+      border-color: #d4c5f9;
+    }
 
     /* ── Projects ── */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.1rem;
+      align-items: stretch;
     }
+
     .project-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      height: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.3rem;
       box-shadow: var(--shadow);
-      display: flex; flex-direction: column; gap: 0.65rem;
     }
-    .project-card h3 { font-size: 1rem; font-weight: 700; }
-    .project-card p { color: var(--text-muted); font-size: 0.9rem; flex: 1; }
-    .project-meta { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
+
+    .project-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    .project-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
     .project-link {
-      align-self: flex-start; font-size: 0.82rem; font-weight: 600;
-      color: var(--accent); margin-top: auto;
+      align-self: flex-start;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: auto;
     }
 
     /* ── Experience ── */
     .exp-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.4rem 1.5rem;
-      box-shadow: var(--shadow); margin-bottom: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
     }
+
     .exp-header {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 1rem; margin-bottom: 0.3rem; flex-wrap: wrap;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
     }
-    .exp-header h3 { font-size: 1.05rem; font-weight: 700; }
-    .exp-meta { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.9rem; }
+
+    .exp-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .exp-meta {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.9rem;
+    }
+
     .exp-date {
-      color: var(--text-muted); font-size: 0.82rem;
-      white-space: nowrap; font-family: var(--mono);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      white-space: nowrap;
+      font-family: var(--mono);
     }
-    .exp-card ul { padding-left: 1.2rem; color: #3d4a5e; }
-    .exp-card ul li { margin-bottom: 0.4rem; font-size: 0.92rem; }
+
+    .exp-card ul {
+      padding-left: 1.2rem;
+      color: #3d4a5e;
+    }
+
+    .exp-card ul li {
+      margin-bottom: 0.4rem;
+      font-size: 0.92rem;
+    }
 
     /* ── Certifications ── */
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.9rem;
+      align-items: stretch;
     }
+
     .cert-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
       box-shadow: var(--shadow);
     }
-    .cert-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.2rem; }
-    .cert-issuer { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 0.3rem; }
-    .cert-desc { font-size: 0.82rem; color: var(--text-muted); }
+
+    .cert-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .cert-issuer {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .cert-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
 
     /* ── Contact ── */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.9rem;
+      align-items: stretch;
     }
+
     .contact-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1rem 1.2rem;
-      box-shadow: var(--shadow); font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      box-shadow: var(--shadow);
+      font-size: 0.9rem;
     }
-    .contact-card strong { display: block; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+
+    .contact-card strong {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
 
     /* ── Footer ── */
     footer {
-      text-align: center; padding: 1.5rem 0;
-      font-size: 0.8rem; color: var(--text-muted);
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
     /* ── Responsive ── */
-    @media (max-width: 720px) {
-      .main-nav { flex-direction: column; gap: 0.5rem; }
-      .nav-links { flex-wrap: wrap; gap: 0.75rem; }
-      .hero-section { padding-top: 10rem; }
-      .section { padding-top: 6rem; }
+    @media (max-width: 1024px) {
+      .section {
+        padding: 2.5rem 0 2rem;
+      }
+
+      .hero-section {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+      }
+
+      .main-nav {
+        padding: 0.75rem 0;
+      }
+
+      .container {
+        width: min(100% - 2rem, var(--max-width));
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .certs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .main-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .hero-section {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+      }
+
+      .container {
+        width: min(100% - 1.6rem, var(--max-width));
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .certs-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header class="site-header">
@@ -231,14 +486,18 @@
         <h1>Dheeraj B</h1>
         <p class="hero-tagline">SDET · QA Automation Engineer · Java | Selenium | REST Assured | CI/CD</p>
         <p class="hero-summary">
-          QA Automation Engineer with 4+ years of experience building and scaling test automation for high-traffic distributed microservices architectures. Specializes in Java-based UI and API automation using Selenium and REST Assured, CI/CD pipeline integration with Jenkins and Harness, and backend quality assurance across complex multi-service systems. Actively applies Generative AI tooling to accelerate test development, defect analysis, and QA workflow automation.
+          QA Automation Engineer with 4+ years of experience building and scaling test automation for high-traffic
+          distributed microservices architectures. Specializes in Java-based UI and API automation using Selenium and
+          REST Assured, CI/CD pipeline integration with Jenkins and Harness, and backend quality assurance across
+          complex multi-service systems. Actively applies Generative AI tooling to accelerate test development, defect
+          analysis, and QA workflow automation.
         </p>
         <div class="hero-badges">
           <span class="badge">4+ Years Experience</span>
           <span class="badge">Java · Selenium · REST Assured</span>
           <span class="badge">Jenkins · Harness · GitHub Actions</span>
           <span class="badge">API &amp; Backend Testing</span>
-          <span class="badge green">Open to Work · Bangalore / Remote</span>
+          <span class="badge">SQL / DB Validation</span>
         </div>
       </div>
     </section>
@@ -253,16 +512,24 @@
             <h3>SDET / QA Automation Engineer</h3>
             <span class="exp-date">Feb 2022 – Present</span>
           </div>
-          <p class="exp-meta">Infosys Ltd · Client: National Australia Bank (NAB) · Mysore, KA</p>
+          <p class="exp-meta">Infosys Ltd · Client: National Australia Bank (NAB)</p>
           <ul>
-            <li>Orchestrated QA strategy for microservices-based backend systems, ensuring <strong>99% release stability</strong> with zero major post-production defects.</li>
-            <li>Designed a unified ST + Integration automation pipeline, reducing regression effort by <strong>90%</strong> and accelerating release readiness.</li>
-            <li>Built REST Assured API frameworks achieving <strong>90% functional and integration coverage</strong>, cutting manual effort by 40% and regression cycles by 60%.</li>
-            <li>Contributed to and maintained CI/CD pipelines on Jenkins, Harness, and GitHub Actions — enabling parallel execution, scheduled runs, and reducing bug-fix turnaround by <strong>30%</strong>.</li>
-            <li>Identified and resolved performance bottlenecks using JMeter and Splunk, achieving <strong>45% lower latency</strong>, 80% faster response times, and 35% improved throughput under load.</li>
-            <li>Engineered Dockerized test environments in collaboration with DevOps, improving environment scalability and execution consistency by <strong>40%</strong>.</li>
-            <li>Leveraged AI-assisted tools (Cursor AI, Amazon Q, Microsoft Copilot) for test scenario generation, script refactoring, and defect analysis.</li>
-            <li>Worked closely with developers, product owners, and business stakeholders to validate acceptance criteria in an Agile delivery model.</li>
+            <li>Orchestrated QA strategy for microservices-based backend systems, ensuring <strong>99% release
+                stability</strong> with zero major post-production defects.</li>
+            <li>Designed a unified ST + Integration automation pipeline, reducing regression effort by
+              <strong>90%</strong> and accelerating release readiness.</li>
+            <li>Built REST Assured API frameworks achieving <strong>90% functional and integration coverage</strong>,
+              cutting manual effort by 40% and regression cycles by 60%.</li>
+            <li>Contributed to and maintained CI/CD pipelines on Jenkins, Harness, and GitHub Actions — enabling
+              parallel execution, scheduled runs, and reducing bug-fix turnaround by <strong>30%</strong>.</li>
+            <li>Identified and resolved performance bottlenecks using JMeter and Splunk, achieving <strong>45% lower
+                latency</strong>, 80% faster response times, and 35% improved throughput under load.</li>
+            <li>Engineered Dockerized test environments in collaboration with DevOps, improving environment scalability
+              and execution consistency by <strong>40%</strong>.</li>
+            <li>Leveraged AI-assisted tools (Cursor AI, Amazon Q, Microsoft Copilot) for test scenario generation,
+              script refactoring, and defect analysis.</li>
+            <li>Worked closely with developers, product owners, and business stakeholders to validate acceptance
+              criteria in an Agile delivery model.</li>
           </ul>
         </div>
 
@@ -273,9 +540,12 @@
           </div>
           <p class="exp-meta">Crio.Do · Bengaluru, KA</p>
           <ul>
-            <li>Built end-to-end test automation projects using Selenium, TestNG, REST Assured, and Cucumber on real-world e-commerce and travel booking platforms.</li>
-            <li>Designed Page Object Model (POM)-based frameworks, improving execution throughput by ~50% and reducing regression effort significantly.</li>
-            <li>Collaborated on cross-functional automation coverage improvements and refactored test design for stability and maintainability.</li>
+            <li>Built end-to-end test automation projects using Selenium, TestNG, REST Assured, and Cucumber on
+              real-world e-commerce and travel booking platforms.</li>
+            <li>Designed Page Object Model (POM)-based frameworks, improving execution throughput by ~50% and reducing
+              regression effort significantly.</li>
+            <li>Collaborated on cross-functional automation coverage improvements and refactored test design for
+              stability and maintainability.</li>
           </ul>
         </div>
 
@@ -290,17 +560,23 @@
 
           <article class="project-card">
             <h3>Hybrid E2E QA Automation Framework</h3>
-            <p>Production-grade framework covering UI, API, and database validation using Java, Selenium, TestNG, and REST Assured. Built for scalable CI/CD-based regression execution with parallel runs, POM architecture, and automated quality gates.</p>
+            <p>Production-grade framework covering UI, API, and database validation using Java, Selenium, TestNG, and
+              REST Assured. Built for scalable CI/CD-based regression execution with parallel runs, POM architecture,
+              and automated quality gates.</p>
             <div class="tag-list">
               <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">REST Assured</span>
-              <span class="tag">TestNG</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">MySQL</span>
+              <span class="tag">TestNG</span><span class="tag">Jenkins</span><span class="tag">GitHub
+                Actions</span><span class="tag">MySQL</span>
             </div>
-            <a class="project-link" href="https://github.com/dheeraj1b1/e2e-qa-automation-framework" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="project-link" href="https://github.com/dheeraj1b1/e2e-qa-automation-framework" target="_blank"
+              rel="noreferrer">GitHub ↗</a>
           </article>
 
           <article class="project-card">
             <h3>AI-Powered Job Search Hub</h3>
-            <p>End-to-end job search automation pipeline with modules for job scraping, ATS resume scoring, and AI-based resume tailoring. Processes 100+ JDs automatically using Gemini Flash API with two-tier skill-gap analysis. Built with Python, Airtable, and Streamlit.</p>
+            <p>End-to-end job search automation pipeline with modules for job scraping, ATS resume scoring, and AI-based
+              resume tailoring. Processes 100+ JDs automatically using Gemini Flash API with two-tier skill-gap
+              analysis. Built with Python, Airtable, and Streamlit.</p>
             <p class="project-meta">Shows: AI tooling, Python automation, real-world pipeline engineering</p>
             <div class="tag-list">
               <span class="tag ai">Gemini API</span><span class="tag ai">Python</span><span class="tag">Airtable</span>
@@ -309,32 +585,28 @@
           </article>
 
           <article class="project-card">
-            <h3>WhatsApp Job Alert Filter</h3>
-            <p>Automated PDF job alert parser that classifies and filters positions by skill match, seniority level, domain relevance, and location using NLP-based classification via Gemini API. Eliminates manual JD review overhead entirely.</p>
-            <p class="project-meta">Shows: NLP automation, PDF parsing, practical AI integration</p>
-            <div class="tag-list">
-              <span class="tag ai">Gemini API</span><span class="tag ai">Python</span><span class="tag">PDF Parsing</span><span class="tag">NLP</span>
-            </div>
-          </article>
-
-          <article class="project-card">
             <h3>QKart — E-commerce Test Automation</h3>
-            <p>Selenium + TestNG automation framework for a full e-commerce flow using Page Object Model. Improved execution throughput by ~50% and significantly reduced regression effort through stable locator strategy and reusable components.</p>
+            <p>Selenium + TestNG automation framework for a full e-commerce flow using Page Object Model. Improved
+              execution throughput by ~50% and significantly reduced regression effort through stable locator strategy
+              and reusable components.</p>
             <div class="tag-list">
               <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">TestNG</span>
               <span class="tag">POM</span><span class="tag">XPath</span><span class="tag">Extent Reports</span>
             </div>
-            <a class="project-link" href="https://github.com/dheeraj1b1/Qkart-Project" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="project-link" href="https://github.com/dheeraj1b1/Qkart-Project" target="_blank"
+              rel="noreferrer">GitHub ↗</a>
           </article>
 
           <article class="project-card">
             <h3>QTrip — Travel Booking Automation</h3>
-            <p>Automated end-to-end booking workflows including search, filters, and reservations on a dynamic travel UI. Stabilized flaky test execution using optimized locators and explicit waits strategy.</p>
+            <p>Automated end-to-end booking workflows including search, filters, and reservations on a dynamic travel
+              UI. Stabilized flaky test execution using optimized locators and explicit waits strategy.</p>
             <div class="tag-list">
               <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">TestNG</span>
               <span class="tag">API Testing</span><span class="tag">Extent Reports</span>
             </div>
-            <a class="project-link" href="https://github.com/dheeraj1b1/QTrip-Project" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="project-link" href="https://github.com/dheeraj1b1/QTrip-Project" target="_blank"
+              rel="noreferrer">GitHub ↗</a>
           </article>
 
         </div>
@@ -434,31 +706,36 @@
           <div class="cert-card">
             <h4>Automation Testing using Selenium</h4>
             <p class="cert-issuer">Udemy / Crio.Do</p>
-            <p class="cert-desc">Validates hands-on proficiency in Selenium WebDriver with Java, POM architecture, and TestNG test execution.</p>
+            <p class="cert-desc">Validates hands-on proficiency in Selenium WebDriver with Java, POM architecture, and
+              TestNG test execution.</p>
           </div>
 
           <div class="cert-card">
             <h4>JMeter Performance Testing</h4>
             <p class="cert-issuer">Udemy</p>
-            <p class="cert-desc">Validates skills in load testing, stress testing, and performance benchmarking using Apache JMeter.</p>
+            <p class="cert-desc">Validates skills in load testing, stress testing, and performance benchmarking using
+              Apache JMeter.</p>
           </div>
 
           <div class="cert-card">
             <h4>Infosys Certified AWS Cloud Practitioner</h4>
             <p class="cert-issuer">Infosys</p>
-            <p class="cert-desc">Covers AWS core services — EC2, RDS, CloudWatch, S3 — and cloud deployment fundamentals.</p>
+            <p class="cert-desc">Covers AWS core services — EC2, RDS, CloudWatch, S3 — and cloud deployment
+              fundamentals.</p>
           </div>
 
           <div class="cert-card">
             <h4>Infosys Global Agile Developer Certification</h4>
             <p class="cert-issuer">Infosys</p>
-            <p class="cert-desc">Validates Agile/Scrum methodology, sprint planning, and cross-functional delivery practices.</p>
+            <p class="cert-desc">Validates Agile/Scrum methodology, sprint planning, and cross-functional delivery
+              practices.</p>
           </div>
 
           <div class="cert-card">
             <h4>Introduction to Generative AI</h4>
             <p class="cert-issuer">Google Cloud</p>
-            <p class="cert-desc">Covers foundational concepts of LLMs, prompt engineering, and AI-assisted development workflows.</p>
+            <p class="cert-desc">Covers foundational concepts of LLMs, prompt engineering, and AI-assisted development
+              workflows.</p>
           </div>
 
         </div>
@@ -493,8 +770,9 @@
   </main>
 
   <footer>
-    <p>Dheeraj B · SDET &amp; QA Automation Engineer · Mysore, KA</p>
+    <p>Dheeraj B · SDET &amp; QA Automation Engineer</p>
   </footer>
 
 </body>
+
 </html>
