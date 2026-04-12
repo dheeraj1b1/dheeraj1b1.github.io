@@ -358,12 +358,98 @@
       font-size: 0.8rem;
       color: var(--accent);
       font-weight: 600;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.6rem;
     }
 
-    .cert-desc {
-      font-size: 0.82rem;
+    .cert-view-btn {
+      display: inline-block;
+      margin-top: auto;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: var(--font);
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-start;
+    }
+
+    .cert-view-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ── Certificate Modal ── */
+    .cert-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cert-modal-overlay.active {
+      display: flex;
+    }
+
+    .cert-modal {
+      position: relative;
+      width: 80%;
+      height: 85%;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .cert-modal-header h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .cert-modal-close {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: var(--surface-alt);
+      border-radius: 50%;
+      font-size: 1.1rem;
       color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+      font-family: var(--font);
+    }
+
+    .cert-modal-close:hover {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .cert-modal iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
     }
 
     /* ── Contact ── */
@@ -517,7 +603,8 @@
             <li>Orchestrated QA strategy for microservices-based backend systems, ensuring <strong>99% release
                 stability</strong> with zero major post-production defects.</li>
             <li>Designed a unified ST + Integration automation pipeline, reducing regression effort by
-              <strong>90%</strong> and accelerating release readiness.</li>
+              <strong>90%</strong> and accelerating release readiness.
+            </li>
             <li>Built REST Assured API frameworks achieving <strong>90% functional and integration coverage</strong>,
               cutting manual effort by 40% and regression cycles by 60%.</li>
             <li>Contributed to and maintained CI/CD pipelines on Jenkins, Harness, and GitHub Actions — enabling
@@ -577,13 +664,13 @@
             <p>End-to-end job search automation pipeline with modules for job scraping, ATS resume scoring, and AI-based
               resume tailoring. Processes 100+ JDs automatically using Gemini Flash API with two-tier skill-gap
               analysis. Built with Python, Airtable, and Streamlit.</p>
-            <p class="project-meta">Shows: AI tooling, Python automation, real-world pipeline engineering</p>
+            <!-- <p class="project-meta">Shows: AI tooling, Python automation, real-world pipeline engineering</p> -->
             <div class="tag-list">
               <span class="tag ai">Gemini API</span><span class="tag ai">Python</span><span class="tag">Airtable</span>
               <span class="tag">Streamlit</span><span class="tag">GitHub Actions</span>
             </div>
-            <a class="project-link" href="https://github.com/dheeraj1b1/my-ats" target="_blank"
-              rel="noreferrer">GitHub ↗</a>
+            <a class="project-link" href="https://github.com/dheeraj1b1/my-ats" target="_blank" rel="noreferrer">GitHub
+              ↗</a>
           </article>
 
           <article class="project-card">
@@ -706,38 +793,115 @@
         <div class="certs-grid">
 
           <div class="cert-card">
-            <h4>Automation Testing using Selenium</h4>
-            <p class="cert-issuer">Udemy / Crio.Do</p>
-            <p class="cert-desc">Validates hands-on proficiency in Selenium WebDriver with Java, POM architecture, and
-              TestNG test execution.</p>
-          </div>
-
-          <div class="cert-card">
-            <h4>JMeter Performance Testing</h4>
+            <h4>Cursor AI Beginner to Pro</h4>
             <p class="cert-issuer">Udemy</p>
-            <p class="cert-desc">Validates skills in load testing, stress testing, and performance benchmarking using
-              Apache JMeter.</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Cursor AI Beginner to Pro', '01_cursor_ai_beginner_pro.pdf')">View
+              Certificate</button>
           </div>
 
           <div class="cert-card">
-            <h4>Infosys Certified AWS Cloud Practitioner</h4>
-            <p class="cert-issuer">Infosys</p>
-            <p class="cert-desc">Covers AWS core services — EC2, RDS, CloudWatch, S3 — and cloud deployment
-              fundamentals.</p>
-          </div>
-
-          <div class="cert-card">
-            <h4>Infosys Global Agile Developer Certification</h4>
-            <p class="cert-issuer">Infosys</p>
-            <p class="cert-desc">Validates Agile/Scrum methodology, sprint planning, and cross-functional delivery
-              practices.</p>
+            <h4>GenAI &amp; AI Agents for QA Automation</h4>
+            <p class="cert-issuer">Udemy</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('GenAI &amp; AI Agents for QA Automation', '02_genai_agents_qa_automation.pdf')">View
+              Certificate</button>
           </div>
 
           <div class="cert-card">
             <h4>Introduction to Generative AI</h4>
             <p class="cert-issuer">Google Cloud</p>
-            <p class="cert-desc">Covers foundational concepts of LLMs, prompt engineering, and AI-assisted development
-              workflows.</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Introduction to Generative AI', '03_intro_generative_ai_google.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Learn JMeter from Scratch — Performance Testing</h4>
+            <p class="cert-issuer">Udemy</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Learn JMeter from Scratch — Performance Testing', '04_jmeter_performance_testing.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Automation Testing using Selenium — Basic</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Automation Testing using Selenium — Basic', '05_infosys_selenium_basic.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified AWS Cloud Practitioner</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified AWS Cloud Practitioner', '06_infosys_aws_cloud_practitioner.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified Professional — Generative AI for All</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified Professional — Generative AI for All', '07_infosys_genai_for_all.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Global Agile Developer Certification</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Global Agile Developer Certification', '08_infosys_global_agile_developer.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified Associate in Splunk Fundamentals</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified Associate in Splunk Fundamentals', '09_infosys_splunk_fundamentals.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified SPEL100 Software Performance Engineering</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified SPEL100 Software Performance Engineering', '10_infosys_spel100_performance.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified Automation Foundation Developer</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified Automation Foundation Developer', '11_infosys_automation_foundation_dev.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified Applied Generative AI Professional</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified Applied Generative AI Professional', '12_infosys_applied_genai_professional.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified Java SE8 Developer</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified Java SE8 Developer', '13_infosys_java_se8_developer.pdf')">View
+              Certificate</button>
+          </div>
+
+          <div class="cert-card">
+            <h4>Certified Foundation Level Agile Tester</h4>
+            <p class="cert-issuer">Infosys</p>
+            <button class="cert-view-btn"
+              onclick="openCertModal('Certified Foundation Level Agile Tester', '14_infosys_agile_tester_foundation.pdf')">View
+              Certificate</button>
           </div>
 
         </div>
@@ -774,6 +938,46 @@
   <footer>
     <p>Dheeraj B · SDET &amp; QA Automation Engineer</p>
   </footer>
+
+  <!-- Certificate Modal -->
+  <div class="cert-modal-overlay" id="certModalOverlay">
+    <div class="cert-modal">
+      <div class="cert-modal-header">
+        <h3 id="certModalTitle">Certificate</h3>
+        <button class="cert-modal-close" id="certModalClose" aria-label="Close">✕</button>
+      </div>
+      <iframe id="certModalIframe" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    const CERT_BASE = 'https://qdcnpuncureormyezvbp.supabase.co/storage/v1/object/public/certificates/';
+    const overlay = document.getElementById('certModalOverlay');
+    const modalTitle = document.getElementById('certModalTitle');
+    const modalIframe = document.getElementById('certModalIframe');
+    const closeBtn = document.getElementById('certModalClose');
+
+    function openCertModal(name, file) {
+      modalTitle.textContent = name;
+      modalIframe.src = CERT_BASE + encodeURIComponent(file);
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+      overlay.classList.remove('active');
+      modalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeCertModal);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeCertModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeCertModal();
+    });
+  </script>
 
 </body>
 
