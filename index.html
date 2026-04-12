@@ -3,157 +3,498 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dheeraj B - QA Automation Engineer portfolio" />
-  <title>Dheeraj B | QA Automation Engineer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Dheeraj B — SDET & QA Automation Engineer. Java, Selenium, REST Assured, CI/CD, API Testing." />
+  <title>Dheeraj B | SDET & QA Automation Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4f6fa;
+      --surface: #ffffff;
+      --surface-alt: #edf0f7;
+      --text-main: #18202c;
+      --text-muted: #5a6477;
+      --accent: #1a56db;
+      --accent-light: #e8effe;
+      --accent-border: #bdd0fb;
+      --green: #0e7a4f;
+      --green-bg: #e6f7ef;
+      --border: #dce3ef;
+      --shadow: 0 2px 16px rgba(20,36,70,0.07);
+      --radius: 14px;
+      --max-width: 1060px;
+      --font: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(100% - 2.4rem, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* ── Nav ── */
+    .site-header {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .main-nav {
+      width: min(100% - 2.4rem, var(--max-width));
+      margin: 0 auto;
+      padding: 0.85rem 0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-weight: 700; font-size: 1rem; color: var(--text-main); letter-spacing: -0.2px; }
+    .nav-links { list-style: none; display: flex; gap: 1.4rem; }
+    .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text-main); text-decoration: none; }
+
+    /* ── Sections ── */
+    .section { padding: 5.5rem 0 4rem; border-bottom: 1px solid var(--border); }
+    .section-alt { background: var(--surface-alt); }
+    .section h2 { font-size: 1.55rem; font-weight: 700; margin-bottom: 1.6rem; letter-spacing: -0.3px; }
+
+    /* ── Hero ── */
+    .hero-section {
+      padding-top: 8rem;
+      background: linear-gradient(155deg, #ffffff 60%, #edf2ff 100%);
+    }
+    .hero-content { max-width: 780px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.4px;
+      color: var(--accent); background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      border-radius: 999px; padding: 0.22rem 0.75rem; margin-bottom: 1rem;
+    }
+    .hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700; letter-spacing: -0.6px;
+      margin-bottom: 0.5rem; line-height: 1.15;
+    }
+    .hero-tagline {
+      font-size: 1.05rem; font-weight: 600; color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+    .hero-summary { color: #3d4a5e; max-width: 700px; margin-bottom: 1.5rem; }
+
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .badge {
+      font-size: 0.78rem; font-weight: 600;
+      border-radius: 999px; padding: 0.25rem 0.7rem;
+      background: var(--accent-light); color: var(--accent);
+      border: 1px solid var(--accent-border);
+    }
+    .badge.green { background: var(--green-bg); color: var(--green); border-color: #9be3c3; }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+    .skill-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.1rem 1.2rem;
+      box-shadow: var(--shadow);
+    }
+    .skill-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--text-main); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tag {
+      background: #edf2ff; color: #263f80;
+      border: 1px solid #c9d8f7; border-radius: 999px;
+      padding: 0.12rem 0.52rem; font-size: 0.76rem; font-weight: 600;
+      font-family: var(--mono);
+    }
+    .tag.ai { background: #f0ebff; color: #5b21b6; border-color: #d4c5f9; }
+
+    /* ── Projects ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+    }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .project-card h3 { font-size: 1rem; font-weight: 700; }
+    .project-card p { color: var(--text-muted); font-size: 0.9rem; flex: 1; }
+    .project-meta { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
+    .project-link {
+      align-self: flex-start; font-size: 0.82rem; font-weight: 600;
+      color: var(--accent); margin-top: auto;
+    }
+
+    /* ── Experience ── */
+    .exp-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow); margin-bottom: 1rem;
+    }
+    .exp-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 1rem; margin-bottom: 0.3rem; flex-wrap: wrap;
+    }
+    .exp-header h3 { font-size: 1.05rem; font-weight: 700; }
+    .exp-meta { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.9rem; }
+    .exp-date {
+      color: var(--text-muted); font-size: 0.82rem;
+      white-space: nowrap; font-family: var(--mono);
+    }
+    .exp-card ul { padding-left: 1.2rem; color: #3d4a5e; }
+    .exp-card ul li { margin-bottom: 0.4rem; font-size: 0.92rem; }
+
+    /* ── Certifications ── */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.9rem;
+    }
+    .cert-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .cert-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .cert-issuer { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 0.3rem; }
+    .cert-desc { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.9rem;
+    }
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.2rem;
+      box-shadow: var(--shadow); font-size: 0.9rem;
+    }
+    .contact-card strong { display: block; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 1.5rem 0;
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .main-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-links { flex-wrap: wrap; gap: 0.75rem; }
+      .hero-section { padding-top: 10rem; }
+      .section { padding-top: 6rem; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Fixed navigation bar -->
+
   <header class="site-header">
     <nav class="main-nav">
       <a class="brand" href="#hero">Dheeraj B</a>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- Hero section -->
+
+    <!-- ── Hero ── -->
     <section id="hero" class="section hero-section">
       <div class="container hero-content">
         <p class="eyebrow">Professional Portfolio</p>
         <h1>Dheeraj B</h1>
-        <p class="hero-tagline">QA Automation Engineer | SDET | UI + API + CI/CD Automation</p>
+        <p class="hero-tagline">SDET · QA Automation Engineer · Java | Selenium | REST Assured | CI/CD</p>
         <p class="hero-summary">
-          Software Quality Engineer with 4+ years of experience in automation and backend testing within BFSI environments. Experienced in designing scalable UI and API automation frameworks using Java, Selenium, and REST Assured, and integrating them into CI/CD pipelines for reliable, release-ready systems. Focused on building maintainable test architecture, improving regression efficiency, and ensuring end-to-end quality across microservices platforms.
+          QA Automation Engineer with 4+ years of experience building and scaling test automation for high-traffic distributed microservices architectures. Specializes in Java-based UI and API automation using Selenium and REST Assured, CI/CD pipeline integration with Jenkins and Harness, and backend quality assurance across complex multi-service systems. Actively applies Generative AI tooling to accelerate test development, defect analysis, and QA workflow automation.
         </p>
-      </div>
-    </section>
-
-    <!-- Skills section -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2>Skills</h2>
-        <p><strong>Key Skills:</strong> Java | Selenium WebDriver | REST Assured | TestNG | API Testing | Jenkins (AWS EC2) | CI/CD | SQL | JMeter</p>
-
-        <div class="skills-grid">
-          <article class="skill-badge">
-            <div>
-              <h3>Languages</h3>
-              <p>
-                <span class="tech-tags"><span>Java</span> <span>Python (Basic)</span></span>
-              </p>
-            </div>
-          </article>
-
-          <article class="skill-badge">
-            <div>
-              <h3>Automation &amp; Frameworks</h3>
-              <p>
-                <span class="tech-tags"><span>Selenium WebDriver</span> <span>TestNG</span> <span>REST Assured</span> <span>Cucumber (BDD)</span> <span>Page Object Model (POM)</span> <span>Playwright (Basic)</span> <span>WebDriverManager</span> <span>XPath</span></span>
-              </p>
-            </div>
-          </article>
-
-          <article class="skill-badge">
-            <div>
-              <h3>CI/CD &amp; DevOps</h3>
-              <p>
-                <span class="tech-tags"><span>Jenkins (AWS EC2)</span> <span>GitHub Actions</span> <span>Harness</span> <span>Maven</span> <span>Gradle</span> <span>Git</span> <span>Artifactory</span></span>
-              </p>
-            </div>
-          </article>
-
-          <article class="skill-badge">
-            <div>
-              <h3>Performance &amp; Monitoring</h3>
-              <p>
-                <span class="tech-tags"><span>JMeter</span> <span>LoadRunner</span> <span>Splunk</span> <span>SigNoz</span></span>
-              </p>
-            </div>
-          </article>
-
-          <article class="skill-badge">
-            <div>
-              <h3>Databases &amp; Cloud</h3>
-              <p>
-                <span class="tech-tags"><span>MySQL</span> <span>PostgreSQL</span> <span>AWS EC2</span> <span>AWS RDS</span> <span>AWS CloudWatch</span> <span>Kafka</span> <span>OpenSearch</span></span>
-              </p>
-            </div>
-          </article>
-
-          <article class="skill-badge">
-            <div>
-              <h3>Testing Practices</h3>
-              <p>
-                <span class="tech-tags"><span>Automation Testing</span> <span>Manual Testing</span> <span>Regression Testing</span> <span>System Testing (ST)</span> <span>System Integration Testing (SIT)</span> <span>Performance Testing (PT)</span> <span>Agile (Scrum)</span> <span>SDLC</span> <span>STLC</span></span>
-              </p>
-            </div>
-          </article>
+        <div class="hero-badges">
+          <span class="badge">4+ Years Experience</span>
+          <span class="badge">Java · Selenium · REST Assured</span>
+          <span class="badge">Jenkins · Harness · GitHub Actions</span>
+          <span class="badge">API &amp; Backend Testing</span>
+          <span class="badge green">Open to Work · Bangalore / Remote</span>
         </div>
       </div>
     </section>
 
-    <!-- Projects section -->
+    <!-- ── Experience ── -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>SDET / QA Automation Engineer</h3>
+            <span class="exp-date">Feb 2022 – Present</span>
+          </div>
+          <p class="exp-meta">Infosys Ltd · Client: National Australia Bank (NAB) · Mysore, KA</p>
+          <ul>
+            <li>Orchestrated QA strategy for microservices-based backend systems, ensuring <strong>99% release stability</strong> with zero major post-production defects.</li>
+            <li>Designed a unified ST + Integration automation pipeline, reducing regression effort by <strong>90%</strong> and accelerating release readiness.</li>
+            <li>Built REST Assured API frameworks achieving <strong>90% functional and integration coverage</strong>, cutting manual effort by 40% and regression cycles by 60%.</li>
+            <li>Contributed to and maintained CI/CD pipelines on Jenkins, Harness, and GitHub Actions — enabling parallel execution, scheduled runs, and reducing bug-fix turnaround by <strong>30%</strong>.</li>
+            <li>Identified and resolved performance bottlenecks using JMeter and Splunk, achieving <strong>45% lower latency</strong>, 80% faster response times, and 35% improved throughput under load.</li>
+            <li>Engineered Dockerized test environments in collaboration with DevOps, improving environment scalability and execution consistency by <strong>40%</strong>.</li>
+            <li>Leveraged AI-assisted tools (Cursor AI, Amazon Q, Microsoft Copilot) for test scenario generation, script refactoring, and defect analysis.</li>
+            <li>Worked closely with developers, product owners, and business stakeholders to validate acceptance criteria in an Agile delivery model.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3>QA Automation Engineer (Project-Based Training)</h3>
+            <span class="exp-date">Mar 2023 – Jun 2024</span>
+          </div>
+          <p class="exp-meta">Crio.Do · Bengaluru, KA</p>
+          <ul>
+            <li>Built end-to-end test automation projects using Selenium, TestNG, REST Assured, and Cucumber on real-world e-commerce and travel booking platforms.</li>
+            <li>Designed Page Object Model (POM)-based frameworks, improving execution throughput by ~50% and reducing regression effort significantly.</li>
+            <li>Collaborated on cross-functional automation coverage improvements and refactored test design for stability and maintainability.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Projects ── -->
     <section id="projects" class="section section-alt">
       <div class="container">
         <h2>Projects</h2>
         <div class="projects-grid">
+
           <article class="project-card">
             <h3>Hybrid E2E QA Automation Framework</h3>
-            <p>
-              Production-grade hybrid automation framework covering UI, API, and database validation using Java, Selenium, TestNG, and REST Assured. Designed for scalable regression execution with CI/CD integration, parallel execution, and maintainable framework architecture.
-            </p>
-            <ul class="tech-tags">
-              <li>Java</li>
-              <li>Selenium</li>
-              <li>REST Assured</li>
-              <li>TestNG</li>
-              <li>MySQL</li>
-              <li>Jenkins (AWS EC2)</li>
-              <li>GitHub Actions</li>
-            </ul>
-            <a href="https://github.com/dheeraj1b1/e2e-qa-automation-framework" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <p>Production-grade framework covering UI, API, and database validation using Java, Selenium, TestNG, and REST Assured. Built for scalable CI/CD-based regression execution with parallel runs, POM architecture, and automated quality gates.</p>
+            <div class="tag-list">
+              <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">REST Assured</span>
+              <span class="tag">TestNG</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">MySQL</span>
+            </div>
+            <a class="project-link" href="https://github.com/dheeraj1b1/e2e-qa-automation-framework" target="_blank" rel="noreferrer">GitHub ↗</a>
           </article>
+
+          <article class="project-card">
+            <h3>AI-Powered Job Search Hub</h3>
+            <p>End-to-end job search automation pipeline with modules for job scraping, ATS resume scoring, and AI-based resume tailoring. Processes 100+ JDs automatically using Gemini Flash API with two-tier skill-gap analysis. Built with Python, Airtable, and Streamlit.</p>
+            <p class="project-meta">Shows: AI tooling, Python automation, real-world pipeline engineering</p>
+            <div class="tag-list">
+              <span class="tag ai">Gemini API</span><span class="tag ai">Python</span><span class="tag">Airtable</span>
+              <span class="tag">Streamlit</span><span class="tag">GitHub Actions</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>WhatsApp Job Alert Filter</h3>
+            <p>Automated PDF job alert parser that classifies and filters positions by skill match, seniority level, domain relevance, and location using NLP-based classification via Gemini API. Eliminates manual JD review overhead entirely.</p>
+            <p class="project-meta">Shows: NLP automation, PDF parsing, practical AI integration</p>
+            <div class="tag-list">
+              <span class="tag ai">Gemini API</span><span class="tag ai">Python</span><span class="tag">PDF Parsing</span><span class="tag">NLP</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>QKart — E-commerce Test Automation</h3>
+            <p>Selenium + TestNG automation framework for a full e-commerce flow using Page Object Model. Improved execution throughput by ~50% and significantly reduced regression effort through stable locator strategy and reusable components.</p>
+            <div class="tag-list">
+              <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">TestNG</span>
+              <span class="tag">POM</span><span class="tag">XPath</span><span class="tag">Extent Reports</span>
+            </div>
+            <a class="project-link" href="https://github.com/dheeraj1b1/Qkart-Project" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </article>
+
+          <article class="project-card">
+            <h3>QTrip — Travel Booking Automation</h3>
+            <p>Automated end-to-end booking workflows including search, filters, and reservations on a dynamic travel UI. Stabilized flaky test execution using optimized locators and explicit waits strategy.</p>
+            <div class="tag-list">
+              <span class="tag">Java</span><span class="tag">Selenium</span><span class="tag">TestNG</span>
+              <span class="tag">API Testing</span><span class="tag">Extent Reports</span>
+            </div>
+            <a class="project-link" href="https://github.com/dheeraj1b1/QTrip-Project" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Experience section -->
-    <section id="experience" class="section">
+    <!-- ── Skills ── -->
+    <section id="skills" class="section">
       <div class="container">
-        <h2>Experience</h2>
-        <article class="experience-card">
-          <div class="experience-header">
-            <h3>Senior QA Automation Engineer - Client Project (E-commerce Platform)</h3>
-            <span>2023 - Present</span>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <h3>Core Stack</h3>
+            <div class="tag-list">
+              <span class="tag">Java</span><span class="tag">Selenium WebDriver</span>
+              <span class="tag">REST Assured</span><span class="tag">TestNG</span>
+              <span class="tag">API Testing</span><span class="tag">SQL</span>
+            </div>
           </div>
-          <ul>
-            <li>Designed and maintained a scalable automation framework for UI and API layers.</li>
-            <li>Reduced regression execution time by introducing parallelization and test tagging strategy.</li>
-            <li>Integrated quality gates into Jenkins and GitHub Actions for continuous release validation.</li>
-            <li>Collaborated with developers and product teams to triage defects and improve testability.</li>
-          </ul>
-        </article>
+
+          <div class="skill-card">
+            <h3>Frameworks &amp; Testing</h3>
+            <div class="tag-list">
+              <span class="tag">Cucumber (BDD)</span><span class="tag">Page Object Model</span>
+              <span class="tag">Playwright (Basic)</span><span class="tag">WebDriverManager</span>
+              <span class="tag">XPath</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>CI/CD &amp; DevOps</h3>
+            <div class="tag-list">
+              <span class="tag">Jenkins</span><span class="tag">Harness</span>
+              <span class="tag">GitHub Actions</span><span class="tag">Docker</span>
+              <span class="tag">Maven</span><span class="tag">Gradle</span>
+              <span class="tag">Git</span><span class="tag">Artifactory</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Performance &amp; Monitoring</h3>
+            <div class="tag-list">
+              <span class="tag">JMeter</span><span class="tag">LoadRunner</span>
+              <span class="tag">Splunk</span><span class="tag">OpenSearch</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Databases &amp; Cloud</h3>
+            <div class="tag-list">
+              <span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+              <span class="tag">AWS EC2</span><span class="tag">AWS RDS</span>
+              <span class="tag">AWS CloudWatch</span><span class="tag">Kafka</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>AI &amp; Productivity Tools</h3>
+            <div class="tag-list">
+              <span class="tag ai">Cursor AI</span><span class="tag ai">Amazon Q</span>
+              <span class="tag ai">Microsoft Copilot</span><span class="tag ai">Gemini API</span>
+              <span class="tag ai">Google AI Studio</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Testing Practices</h3>
+            <div class="tag-list">
+              <span class="tag">Automation Testing</span><span class="tag">Manual Testing</span>
+              <span class="tag">Regression Testing</span><span class="tag">System Testing</span>
+              <span class="tag">SIT</span><span class="tag">Performance Testing</span>
+              <span class="tag">Service Virtualization</span><span class="tag">Agile / Scrum</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Tools</h3>
+            <div class="tag-list">
+              <span class="tag">JIRA</span><span class="tag">Confluence</span>
+              <span class="tag">Postman</span><span class="tag">Swagger</span>
+              <span class="tag">TestRail</span><span class="tag">DBeaver</span>
+              <span class="tag">IntelliJ</span><span class="tag">VS Code</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- Contact section -->
-    <section id="contact" class="section section-alt">
+    <!-- ── Certifications ── -->
+    <section id="certifications" class="section section-alt">
+      <div class="container">
+        <h2>Certifications</h2>
+        <div class="certs-grid">
+
+          <div class="cert-card">
+            <h4>Automation Testing using Selenium</h4>
+            <p class="cert-issuer">Udemy / Crio.Do</p>
+            <p class="cert-desc">Validates hands-on proficiency in Selenium WebDriver with Java, POM architecture, and TestNG test execution.</p>
+          </div>
+
+          <div class="cert-card">
+            <h4>JMeter Performance Testing</h4>
+            <p class="cert-issuer">Udemy</p>
+            <p class="cert-desc">Validates skills in load testing, stress testing, and performance benchmarking using Apache JMeter.</p>
+          </div>
+
+          <div class="cert-card">
+            <h4>Infosys Certified AWS Cloud Practitioner</h4>
+            <p class="cert-issuer">Infosys</p>
+            <p class="cert-desc">Covers AWS core services — EC2, RDS, CloudWatch, S3 — and cloud deployment fundamentals.</p>
+          </div>
+
+          <div class="cert-card">
+            <h4>Infosys Global Agile Developer Certification</h4>
+            <p class="cert-issuer">Infosys</p>
+            <p class="cert-desc">Validates Agile/Scrum methodology, sprint planning, and cross-functional delivery practices.</p>
+          </div>
+
+          <div class="cert-card">
+            <h4>Introduction to Generative AI</h4>
+            <p class="cert-issuer">Google Cloud</p>
+            <p class="cert-desc">Covers foundational concepts of LLMs, prompt engineering, and AI-assisted development workflows.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
-        <div class="contact-card">
-          <p><strong>Email:</strong> <a href="mailto:dheeraj474@gmail.com">dheeraj474@gmail.com</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dheerajbme" target="_blank" rel="noreferrer">linkedin.com/in/dheerajbme</a></p>
-          <p><strong>GitHub:</strong> <a href="https://github.com/dheeraj1b1" target="_blank" rel="noreferrer">github.com/dheeraj1b1</a></p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <strong>Phone</strong>
+            <a href="tel:+919148577548">+91 9148577548</a>
+          </div>
+          <div class="contact-card">
+            <strong>Email</strong>
+            <a href="mailto:dheeraj474@gmail.com">dheeraj474@gmail.com</a>
+          </div>
+          <div class="contact-card">
+            <strong>LinkedIn</strong>
+            <a href="https://linkedin.com/in/dheerajbme" target="_blank" rel="noreferrer">linkedin.com/in/dheerajbme</a>
+          </div>
+          <div class="contact-card">
+            <strong>GitHub</strong>
+            <a href="https://github.com/dheeraj1b1" target="_blank" rel="noreferrer">github.com/dheeraj1b1</a>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
+
+  <footer>
+    <p>Dheeraj B · SDET &amp; QA Automation Engineer · Mysore, KA</p>
+  </footer>
+
 </body>
 </html>
