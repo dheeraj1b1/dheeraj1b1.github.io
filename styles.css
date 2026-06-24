@@ -374,6 +374,57 @@ button {
   border-color: var(--accent);
 }
 
+.learning-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(18, 34, 59, 0.06);
+}
+
+.learning-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--amber), rgba(11, 122, 91, 0.55));
+}
+
+.learning-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.learning-header h3 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.learning-desc {
+  color: #43536a;
+  font-size: 17px;
+}
+
+.learning-highlights {
+  margin: 0;
+  padding-left: 20px;
+  color: #35445a;
+  font-size: 17px;
+}
+
+.learning-highlights li + li {
+  margin-top: 10px;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -609,7 +660,8 @@ footer {
   }
 
   .exp-header,
-  .project-topline {
+  .project-topline,
+  .learning-header {
     flex-direction: column;
   }
 
@@ -642,7 +694,8 @@ footer {
 
   .exp-card,
   .project-card,
-  .skill-card {
+  .skill-card,
+  .learning-card {
     padding: 16px;
   }
 }
